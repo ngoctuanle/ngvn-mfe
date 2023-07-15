@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shell';
+
+  sendDataToContact() {
+    const customEvent = new CustomEvent('customEvent', {detail: "test"});
+
+    document.dispatchEvent(customEvent);
+  }
 }

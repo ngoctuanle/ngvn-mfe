@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import NxWelcome from './nx-welcome';
 import * as ReactDOM from 'react-dom/client';
 import { Root } from 'react-dom/client';
+import { useEffect } from 'react';
 
 
 const StyledApp = styled.div`
@@ -10,6 +11,12 @@ const StyledApp = styled.div`
 `;
 
 export function App() {
+  useEffect(() => {
+    const cb = (evt: Event) => console.log(evt);
+    document.addEventListener('customEvent', cb);
+    return () => document.removeEventListener('customEvent', cb);
+  }, []);
+
   return (
     <StyledApp>
       <NxWelcome title="contact" />
