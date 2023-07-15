@@ -3,6 +3,7 @@ const config = require('./module-federation.config');
 module.exports = withModuleFederation({
   ...config,
   remotes: [
-    ['home', 'http://localhost:4201/remoteEntry.mjs']
+    ['home', 'http://localhost:4201/remoteEntry.mjs'],
+    ['contact', 'http://localhost:4202/remoteEntry.js']
   ]
 });
